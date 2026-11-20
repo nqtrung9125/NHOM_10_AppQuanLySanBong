@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- KH-08 Lịch sử đặt sân -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/appbar"
+        layout="@layout/view_appbar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingStart="@dimen/screen_padding"
+            android:paddingTop="@dimen/space_l"
+            android:paddingEnd="@dimen/screen_padding"
+            android:paddingBottom="12dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/chipHAll"
+                    style="@style/PillChip"
+                    android:text="@string/filter_all" />
+
+                <TextView
+                    android:id="@+id/chipHPending"
+                    style="@style/PillChip"
+                    android:layout_marginStart="@dimen/space_s"
+                    android:text="@string/hfilter_pending" />
+
+                <TextView
+                    android:id="@+id/chipHPaid"
+                    style="@style/PillChip"
+                    android:layout_marginStart="@dimen/space_s"
+                    android:text="@string/hfilter_paid" />
+
+                <TextView
+                    android:id="@+id/chipHCancelled"
+                    style="@style/PillChip"
+                    android:layout_marginStart="@dimen/space_s"
+                    android:text="@string/hfilter_cancelled" />
+            </LinearLayout>
+
+            <!-- Thẻ booking (thêm bằng code từ DemoData) -->
+            <LinearLayout
+                android:id="@+id/llBookings"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" />
+
+            <TextView
+                android:id="@+id/tvEmpty"
+                style="@style/Text.Body.Muted"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:gravity="center"
+                android:text="@string/empty_history"
+                android:visibility="gone" />
+        </LinearLayout>
+    </ScrollView>
+
+    <include
+        android:id="@+id/bottomNav"
+        layout="@layout/view_bottom_nav" />
+</LinearLayout>
