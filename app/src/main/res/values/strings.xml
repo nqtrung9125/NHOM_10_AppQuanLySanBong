@@ -1,3 +1,133 @@
 <resources>
     <string name="app_name">AppQuanLySanBong</string>
+    <string name="brand_name">Vào Sân</string>
+    <string name="slogan_full">Đặt sân nhanh · Tìm bạn chơi dễ · Chia tiền gọn</string>
+    <string name="slogan_short">Đặt sân nhanh · Tìm bạn chơi dễ</string>
+    <string name="team_info">Nhóm 10 · Lớp 126LTTD03</string>
+    <string name="cd_back">Quay lại</string>
+    <string name="cd_logo">Logo Vào Sân</string>
+    <string name="msg_coming_soon">Màn hình này sẽ có ở đợt tiếp theo</string>
+
+    <!-- KH-01 Đăng nhập -->
+    <string name="login_title">Đăng nhập</string>
+    <string name="login_welcome">Chào mừng bạn quay lại</string>
+    <string name="label_phone">Số điện thoại</string>
+    <string name="hint_phone">0901 234 567</string>
+    <string name="label_password">Mật khẩu</string>
+    <string name="hint_password">••••••••</string>
+    <string name="forgot_password">Quên mật khẩu?</string>
+    <string name="no_account">Chưa có tài khoản?</string>
+    <string name="register">Đăng ký</string>
+    <string name="msg_login_invalid">Số điện thoại hoặc mật khẩu chưa hợp lệ</string>
+
+    <!-- KH-02 Xác thực OTP -->
+    <string name="otp_appbar">Xác thực</string>
+    <string name="otp_title">Nhập mã OTP</string>
+    <string name="otp_subtitle">Mã gồm 6 số đã gửi qua SMS đến %1$s</string>
+    <string name="otp_resend_countdown">Gửi lại mã sau %1$s</string>
+    <string name="otp_resend">Gửi lại mã</string>
+    <string name="otp_confirm">Xác nhận</string>
+    <string name="otp_incomplete">Vui lòng nhập đủ 6 số</string>
+    <string name="otp_resent">Đã gửi lại mã OTP (demo)</string>
+    <string name="otp_success">Xác thực thành công (demo)</string>
+    <!-- KH-03 Đăng ký -->
+    <string name="register_title">Tạo tài khoản</string>
+    <string name="register_subtitle">Điền thông tin để bắt đầu đặt sân</string>
+    <string name="label_full_name">Họ và tên</string>
+    <string name="hint_full_name">Nguyễn Văn A</string>
+    <string name="label_email">Email (không bắt buộc)</string>
+    <string name="hint_email">email@example.com</string>
+    <string name="label_cccd">CCCD</string>
+    <string name="hint_cccd">Nhập 12 số CCCD</string>
+    <string name="label_address">Địa chỉ</string>
+    <string name="hint_address">Nhập địa chỉ thường trú</string>
+    <string name="hint_password_min">Tối thiểu 6 ký tự</string>
+    <string name="label_confirm_password">Nhập lại mật khẩu</string>
+    <string name="label_level">Trình độ chơi (để gợi ý trận)</string>
+    <string name="vneid_title">Liên kết VNeID</string>
+    <string name="vneid_sub">Xác thực danh tính an toàn</string>
+    <string name="vneid_action">Liên kết</string>
+    <string name="msg_vneid_demo">Liên kết VNeID (demo)</string>
+    <string name="msg_register_invalid">Vui lòng nhập họ tên, số điện thoại và mật khẩu (từ 6 ký tự, nhập lại phải trùng)</string>
+
+    <!-- KH-04 Danh sách sân -->
+    <string name="home_greeting">Xin chào, %1$s</string>
+    <string name="home_question">Hôm nay bạn muốn chơi môn gì?</string>
+    <string name="weather_more">Xem ›</string>
+    <string name="search_hint">Tìm sân theo tên hoặc loại sân</string>
+    <string name="filter_all">Tất cả</string>
+    <string name="filter_football">Bóng đá</string>
+    <string name="filter_badminton">Cầu lông</string>
+    <string name="filter_pickleball">Pickleball</string>
+    <string name="filter_volleyball">Bóng chuyền</string>
+    <string name="football_card_title">Sân D1 · Bóng đá 5 người</string>
+    <string name="football_card_status">Còn trống · Có đèn</string>
+    <string name="football_card_meta">Bóng đá 5/7/11 người</string>
+    <string name="football_card_detail">Từ 350.000đ/giờ · Xem sân bóng đá</string>
+    <string name="banner_match_title">Thiếu người? Tìm bạn chơi ngay</string>
+    <string name="banner_match_sub">%1$d trận đang chờ quanh bạn</string>
+    <string name="banner_match_cta">Tìm trận</string>
+    <string name="match_level_recommendation">Dành cho bạn: Trung bình</string>
+    <string name="match_level_range">Ưu tiên trận Trung bình – Khá</string>
+    <string name="match_suggestions_show">Gợi ý</string>
+    <string name="match_suggestions_reset">Tất cả</string>
+    <string name="banner_pass_title">Có sân đang được pass</string>
+    <string name="banner_pass_sub">Nhận sân, chỉ trả tiền cọc</string>
+    <string name="banner_pass_cta">Xem sân</string>
+    <string name="status_available">Hoạt động</string>
+    <string name="status_in_use">Tạm ngưng</string>
+    <string name="empty_courts">Không tìm thấy sân phù hợp</string>
+    <string name="nav_home">Trang chủ</string>
+    <string name="nav_match">Tìm trận</string>
+    <string name="nav_history">Lịch sử</string>
+    <string name="nav_account">Tài khoản</string>
+
+    <!-- KH-05 Chi tiết sân -->
+    <string name="detail_pricing_title">Bảng giá theo khung giờ</string>
+    <string name="detail_info_title">Thông tin sân</string>
+    <string name="detail_type">Loại sân</string>
+    <string name="detail_open">Giờ mở cửa</string>
+    <string name="detail_deposit">Đặt cọc</string>
+    <string name="detail_deposit_deadline">Hạn thanh toán cọc</string>
+    <string name="book_now">Đặt sân ngay</string>
+    <!-- KH-06 Đặt sân -->
+    <string name="booking_title">Đặt %1$s</string>
+    <string name="booking_pick_day">Chọn ngày</string>
+    <string name="booking_pick_slot">Chọn khung giờ</string>
+    <string name="legend_free">Trống</string>
+    <string name="legend_selected">Đang chọn</string>
+    <string name="legend_busy">Đã đặt</string>
+    <string name="summary_court">Sân</string>
+    <string name="summary_date">Ngày</string>
+    <string name="summary_time">Thời gian</string>
+    <string name="summary_total">Tổng tiền sân</string>
+    <string name="summary_deposit">Cọc cần thanh toán (%1$d%%)</string>
+    <string name="summary_remain">Còn lại thanh toán tại sân</string>
+    <string name="time_range_hours">%1$s (%2$d giờ)</string>
+    <string name="booking_note">Thanh toán cọc trong 15 phút sau khi xác nhận, quá hạn booking sẽ tự động hủy. Tiền cọc được khấu trừ vào tổng tiền khi bạn đến sân.</string>
+    <string name="booking_confirm">Xác nhận &amp; thanh toán cọc</string>
+    <string name="msg_pick_slot">Vui lòng chọn ít nhất một khung giờ</string>
+
+    <!-- KH-07 Thanh toán cọc thành công -->
+    <string name="success_title">Đặt sân thành công</string>
+    <string name="success_sub">Đã thanh toán cọc · Xuất trình mã QR khi nhận sân</string>
+    <string name="label_status">Trạng thái</string>
+    <string name="status_deposit_paid">Đã thanh toán cọc</string>
+    <string name="row_hour">Giờ</string>
+    <string name="row_deposit_paid">Đã thanh toán cọc (%1$d%%)</string>
+    <string name="success_note">Đến trong vòng 15 phút sau giờ bắt đầu. Quá giờ, booking bị hủy và không hoàn cọc.</string>
+    <string name="btn_view_booking">Xem chi tiết booking</string>
+    <string name="link_home">Về trang chủ</string>
+    <string name="cd_qr">Mã QR của booking</string>
+
+    <!-- KH-08 Lịch sử đặt sân -->
+    <string name="history_title">Lịch sử đặt sân</string>
+    <string name="hfilter_pending">Chờ cọc</string>
+    <string name="hfilter_paid">Đã cọc</string>
+    <string name="hfilter_cancelled">Đã hủy</string>
+    <string name="reschedule">Dời lịch</string>
+    <string name="cancel_booking">Hủy lịch đặt</string>
+    <string name="pay_deposit">Thanh toán cọc %1$s</string>
+    <string name="pass_court">Pass sân</string>
+    <string name="empty_history">Chưa có lịch đặt nào</string>
 </resources>

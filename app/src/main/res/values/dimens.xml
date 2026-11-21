@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Biến dimension/s, dimension/l, dimension/r, dimension/rs trong Figma -->
+    <dimen name="space_s">8dp</dimen>
+    <dimen name="space_l">16dp</dimen>
+    <dimen name="radius_card">16dp</dimen>
+    <dimen name="radius_small">10dp</dimen>
+    <dimen name="radius_input">14dp</dimen>
+    <dimen name="screen_padding">24dp</dimen>
+    <dimen name="input_height">50dp</dimen>
+    <dimen name="button_height">48dp</dimen>
+    <dimen name="appbar_height">56dp</dimen>
+    <dimen name="otp_width">44dp</dimen>
+    <dimen name="otp_height">54dp</dimen>
+    <dimen name="otp_gap">8dp</dimen>
+    <dimen name="text_label">13sp</dimen>
+    <dimen name="text_body">14sp</dimen>
+    <dimen name="text_input">15sp</dimen>
+    <dimen name="text_button">16sp</dimen>
+    <dimen name="text_title">24sp</dimen>
+    <dimen name="text_appbar">20sp</dimen>
+    <dimen name="input_compact_height">42dp</dimen>
+</resources>

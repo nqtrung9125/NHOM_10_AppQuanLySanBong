@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/appbar_height"
+    android:background="@drawable/bg_appbar"
+    android:clipToOutline="true">
+
+    <ImageView
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        android:layout_gravity="end|top"
+        android:layout_marginTop="-45dp"
+        android:layout_marginEnd="-40dp"
+        android:importantForAccessibility="no"
+        android:src="@drawable/ic_guest_deco_large" />
+
+    <ImageView
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_gravity="end|top"
+        android:layout_marginTop="34dp"
+        android:layout_marginEnd="79dp"
+        android:importantForAccessibility="no"
+        android:src="@drawable/ic_guest_deco_small" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="8dp"
+        android:paddingEnd="@dimen/space_l">
+
+        <TextView
+            android:id="@+id/tvAppbarTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/space_s"
+            android:layout_weight="1"
+            android:accessibilityHeading="true"
+            android:ellipsize="end"
+            android:fontFamily="sans-serif-medium"
+            android:maxLines="1"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/text_appbar" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnLogin"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:background="?attr/selectableItemBackground"
+            android:fontFamily="sans-serif-medium"
+            android:minWidth="0dp"
+            android:padding="0dp"
+            android:text="@string/login_title"
+            android:textAllCaps="false"
+            android:textColor="@color/brand_soft_text"
+            android:textSize="@dimen/text_body"
+            android:visibility="gone" />
+    </LinearLayout>
+</FrameLayout>
