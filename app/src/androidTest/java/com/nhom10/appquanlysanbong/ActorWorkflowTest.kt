@@ -102,8 +102,32 @@ class ActorWorkflowTest {
         val receipt = BookingRepository(context) { now }.operations().single { it.id == hold.id }
         assertEquals("D2", receipt.courtId)
         assertEquals(DepositMethod.TRANSFER, receipt.depositMethod)
+        now = ScheduleDays.startMillis(friday, 18)
         assertEquals(ReservationState.CHECKED_IN, bookings.checkIn(hold.id).state)
         assertEquals(ReservationState.COMPLETED, bookings.checkOut(hold.id).state)
+    }
+
+    @Test
+    fun receptionCanCheckInNearStartOnlyAfterThePreviousCustomerReturnsTheCourt() {
+        signIn(Role.CUSTOMER)
+        val first = bookings.hold("D2", friday, 18, 19)
+        val next = bookings.hold("D2", friday, 19, 20)
+        bookings.payDeposit(first.id)
+        bookings.payDeposit(next.id)
+
+        signIn(Role.RECEPTION)
+        now = ScheduleDays.startMillis(friday, 18) - BookingRules.CHECK_IN_EARLY_MINUTES * 60_000L - 1
+        assertThrows(IllegalArgumentException::class.java) { bookings.checkIn(first.id) }
+        now += 1
+        assertEquals(ReservationState.CHECKED_IN, bookings.checkIn(first.id).state)
+
+        now = ScheduleDays.startMillis(friday, 19)
+        assertThrows(IllegalArgumentException::class.java) { BookingRepository(context) { now }.checkIn(next.id) }
+        assertEquals(ReservationState.COMPLETED, bookings.checkOut(first.id).state)
+        now = ScheduleDays.startMillis(friday, 20)
+        assertThrows(IllegalArgumentException::class.java) { bookings.checkIn(next.id) }
+        now -= 1
+        assertEquals(ReservationState.CHECKED_IN, bookings.checkIn(next.id).state)
     }
 
     @Test
@@ -182,6 +206,37 @@ class ActorWorkflowTest {
         assertTrue(session.signIn(phone))
         assertEquals(Role.CUSTOMER, session.current.role)
         assertEquals("Khách mới", session.current.name)
+    }
+
+    @Test
+    fun profileAndPasswordChangesPersistForDemoAndRegisteredCustomers() {
+        val registeredPhone = "0908301234"
+        val initialPassword = "android-demo"
+        assertTrue(session.registerAndSignIn(
+            registeredPhone, "Khách mới", DemoAccountRepository.registrationProof(registeredPhone, initialPassword)
+        ))
+        val demo = DemoAccounts.accounts.first()
+        val identity = DemoAccountRepository(context)
+        val savedName = "Khách đã cập nhật"
+        val replacement = "MatKhauMoi1"
+        for ((phone, original) in listOf(demo.phone to DemoAccounts.PASSWORD, registeredPhone to initialPassword)) {
+            assertTrue(identity.updateProfile(phone, savedName, 2))
+            assertFalse(identity.changePassword(phone, "wrong", replacement))
+            assertTrue(identity.accepts(phone, original))
+            assertTrue(identity.changePassword(phone, original, replacement))
+            session.signOut()
+
+            val reopened = DemoAccountRepository(context)
+            assertFalse(reopened.accepts(phone, original))
+            assertTrue(reopened.accepts(phone, replacement))
+            assertTrue(session.signIn(phone))
+            assertEquals(savedName, session.current.name)
+            assertEquals(2, session.current.skillLevel)
+            assertEquals(Role.CUSTOMER, session.current.role)
+        }
+        val other = DemoAccounts.accounts[1]
+        assertEquals(other, identity.find(other.phone))
+        assertTrue(identity.accepts(other.phone, DemoAccounts.PASSWORD))
     }
 
     private fun signIn(role: Role) {
