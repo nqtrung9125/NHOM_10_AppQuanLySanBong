@@ -13,6 +13,7 @@ import com.nhom10.appquanlysanbong.data.Court
 import com.nhom10.appquanlysanbong.data.Sport
 import com.nhom10.appquanlysanbong.data.courts.CourtCatalog
 import com.nhom10.appquanlysanbong.data.courts.displayName
+import com.nhom10.appquanlysanbong.data.session.DemoAccountRepository
 import com.nhom10.appquanlysanbong.data.session.DemoAccounts
 import com.nhom10.appquanlysanbong.data.session.Role
 import com.nhom10.appquanlysanbong.data.session.SessionStore
@@ -111,7 +112,8 @@ class GuestHomeFragment : Fragment(R.layout.fragment_guest_court_list) {
         }.root
 
     private fun selectDemoAccount() {
-        val accounts = DemoAccounts.accounts
+        val identity = DemoAccountRepository(requireContext())
+        val accounts = DemoAccounts.accounts.mapNotNull { identity.find(it.phone) }
         val labels = accounts.map { "${it.role.label} · ${it.name}" }.toTypedArray()
         AlertDialog.Builder(requireContext()).setTitle(R.string.guest_demo_accounts)
             .setItems(labels) { _, index ->

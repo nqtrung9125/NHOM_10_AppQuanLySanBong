@@ -22,7 +22,9 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
         _binding = FragmentLoginBinding.bind(view)
         arguments?.getString("phone")?.let {
             binding.edtPhone.setText(it)
-            binding.edtPassword.setText(DemoAccounts.PASSWORD)
+            if (DemoAccountRepository(requireContext()).accepts(it, DemoAccounts.PASSWORD)) {
+                binding.edtPassword.setText(DemoAccounts.PASSWORD)
+            }
         }
 
         binding.btnLogin.setOnClickListener { doLogin() }

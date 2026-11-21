@@ -12,6 +12,7 @@ import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import com.nhom10.appquanlysanbong.R
 import com.nhom10.appquanlysanbong.data.DemoData
+import com.nhom10.appquanlysanbong.data.session.DemoAccountRepository
 import com.nhom10.appquanlysanbong.data.session.SessionStore
 import com.nhom10.appquanlysanbong.databinding.FragmentProfileBinding
 import com.nhom10.appquanlysanbong.databinding.ItemChipBinding
@@ -23,8 +24,8 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
     private var _binding: FragmentProfileBinding? = null
     private val binding get() = _binding!!
 
-    private val skillOptions = listOf("Vui vẻ", "Trung bình", "Khá", "Mạnh")
-    private var selectedSkillIndex = DemoData.DEFAULT_LEVEL.coerceIn(0, skillOptions.lastIndex)
+    private val skillOptions = DemoData.LEVELS
+    private var selectedSkillIndex = DemoData.DEFAULT_LEVEL
     private val skillChips = mutableListOf<TextView>()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -37,6 +38,7 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
         }
 
         val actor = SessionStore(requireContext()).current
+        selectedSkillIndex = actor.skillLevel.coerceIn(skillOptions.indices)
         binding.etFullName.setText(actor.name)
         binding.tvLockedPhone.text = actor.phone
         binding.tvProfileAvatar.text = actor.name.substringAfterLast(' ').take(1).uppercase()
@@ -55,7 +57,10 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
                 binding.etFullName.error = "Vui lòng nhập họ và tên"
                 return@setOnClickListener
             }
-            binding.tvProfileAvatar.text = name.lastOrNull()?.uppercase() ?: "T"
+            if (!DemoAccountRepository(requireContext()).updateProfile(actor.phone, name, selectedSkillIndex)) {
+                Toast.makeText(requireContext(), "Không lưu được hồ sơ. Hãy đăng nhập lại.", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
             Toast.makeText(
                 requireContext(),
                 "Đã lưu thông tin (${skillOptions[selectedSkillIndex]})",

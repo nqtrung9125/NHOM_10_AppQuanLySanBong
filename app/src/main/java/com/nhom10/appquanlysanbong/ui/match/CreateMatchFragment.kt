@@ -13,6 +13,7 @@ import androidx.fragment.app.Fragment
 import com.nhom10.appquanlysanbong.Navigator
 import com.nhom10.appquanlysanbong.R
 import com.nhom10.appquanlysanbong.data.DemoData
+import com.nhom10.appquanlysanbong.data.session.SessionStore
 import com.nhom10.appquanlysanbong.databinding.FragmentCreateMatchBinding
 import com.nhom10.appquanlysanbong.databinding.ItemChipBinding
 import com.nhom10.appquanlysanbong.ui.common.vnd
@@ -63,7 +64,8 @@ class CreateMatchFragment : Fragment(R.layout.fragment_create_match) {
             }
         }
 
-        binding.tvProfileLevel.text = "Theo hồ sơ: ${DemoData.LEVELS.getOrElse(DemoData.DEFAULT_LEVEL) { "Trung bình" }}"
+        val skillLevel = SessionStore(requireContext()).current.skillLevel
+        binding.tvProfileLevel.text = "Theo hồ sơ: ${DemoData.LEVELS.getOrElse(skillLevel) { DemoData.LEVELS[DemoData.DEFAULT_LEVEL] }}"
         binding.btnSuggestLevel.setOnClickListener {
             selectedLevelIndex = 1
             renderLevelChips()

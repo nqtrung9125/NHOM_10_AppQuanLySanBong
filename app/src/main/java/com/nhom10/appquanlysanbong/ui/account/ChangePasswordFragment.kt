@@ -9,6 +9,8 @@ import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import com.nhom10.appquanlysanbong.R
+import com.nhom10.appquanlysanbong.data.session.DemoAccountRepository
+import com.nhom10.appquanlysanbong.data.session.SessionStore
 import com.nhom10.appquanlysanbong.databinding.FragmentChangePasswordBinding
 
 /** KH-16 Đổi mật khẩu: kiểm tra độ mạnh mật khẩu theo thời gian thực và xác nhận cập nhật. */
@@ -53,7 +55,13 @@ class ChangePasswordFragment : Fragment(R.layout.fragment_change_password) {
                 return@setOnClickListener
             }
 
-            Toast.makeText(requireContext(), "Đã cập nhật mật khẩu thành công", Toast.LENGTH_SHORT).show()
+            val context = requireContext()
+            val phone = SessionStore(context).current.phone
+            if (!DemoAccountRepository(context).changePassword(phone, currentPass, newPass)) {
+                binding.etCurrentPassword.error = "Mật khẩu hiện tại không đúng"
+                return@setOnClickListener
+            }
+            Toast.makeText(context, "Đã cập nhật mật khẩu thành công", Toast.LENGTH_SHORT).show()
             requireActivity().onBackPressedDispatcher.onBackPressed()
         }
     }

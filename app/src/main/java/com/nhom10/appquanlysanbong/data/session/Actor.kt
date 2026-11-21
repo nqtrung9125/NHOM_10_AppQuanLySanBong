@@ -1,5 +1,7 @@
 package com.nhom10.appquanlysanbong.data.session
 
+import com.nhom10.appquanlysanbong.data.DemoData
+
 enum class Role(val label: String) {
     GUEST("Khách vãng lai"),
     CUSTOMER("Khách hàng"),
@@ -8,7 +10,13 @@ enum class Role(val label: String) {
     ADMIN("Quản trị viên")
 }
 
-data class Actor(val id: String, val name: String, val role: Role, val phone: String = "")
+data class Actor(
+    val id: String,
+    val name: String,
+    val role: Role,
+    val phone: String = "",
+    val skillLevel: Int = DemoData.DEFAULT_LEVEL
+)
 
 object DemoAccounts {
     const val PASSWORD = "123456"

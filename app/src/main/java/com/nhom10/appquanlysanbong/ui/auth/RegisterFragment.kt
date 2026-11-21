@@ -75,7 +75,7 @@ class RegisterFragment : Fragment(R.layout.fragment_register) {
 
         // Demo: bỏ trống hết thì đi tiếp với số điện thoại mẫu
         if (name.isEmpty() && phone.isEmpty() && pass.isEmpty() && confirm.isEmpty()) {
-            (requireActivity() as Navigator).navigateTo(OtpFragment.newInstance(DemoData.PHONE))
+            (requireActivity() as Navigator).navigateTo(LoginFragment.newInstance(DemoData.PHONE))
             return
         }
         if (name.isEmpty() || DemoAccountRepository.normalize(phone).length !in 9..11 || pass.length < 6 || pass != confirm) {
