@@ -25,7 +25,9 @@ internal fun staffBookingExamples(courts: List<Court>, existing: List<Reservatio
         val candidates = available.sortedBy { it.sport != sport }
         val court = candidates.firstOrNull { candidate ->
             (existing.asSequence() + created.asSequence()).none {
-                BookingRules.overlaps(it, candidate.id, day, start, end, now)
+                BookingRules.overlaps(it, candidate.id, day, start, end, now) ||
+                    (state == ReservationState.CHECKED_IN && it.courtId == candidate.id &&
+                        it.state == ReservationState.CHECKED_IN)
             }
         } ?: return
         val owner = customers[created.size % customers.size]

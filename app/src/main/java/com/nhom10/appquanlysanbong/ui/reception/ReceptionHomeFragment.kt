@@ -70,7 +70,7 @@ class ReceptionHomeFragment : WorkspaceFragment() {
         button("Giữ sân và cáp kèo") { openTab(Page.OPERATIONS.ordinal) }
         heading("Sắp tới")
         if (upcoming.isEmpty()) emptyState("Chưa có phiếu đang chờ nhận sân.")
-        upcoming.forEach { reservationCard(it, "Mở phiếu nhận sân") }
+        upcoming.forEach { reservationCard(it, "Mở phiếu đã cọc") }
     }
 
     private fun WorkspaceContent.bookingSearch() {

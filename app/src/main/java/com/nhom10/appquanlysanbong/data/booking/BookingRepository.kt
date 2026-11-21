@@ -105,14 +105,20 @@ class BookingRepository(context: Context, private val clock: () -> Long = System
         it.copy(state = state, expiresAt = 0)
     }
 
-    fun checkIn(id: String) = change(id) {
+    fun checkIn(id: String) = synchronized(lock) {
         requireRole(Role.RECEPTION)
-        require(it.state == ReservationState.PAID && it.day == ScheduleDays.date(now = clock()) &&
-            ScheduleDays.startMillis(it.day, it.end) > clock()) {
-            "Chỉ nhận sân cho booking đã cọc trong ngày."
+        val reservations = read()
+        val booking = requireNotNull(reservations.find { it.id == id }) { "Không tìm thấy booking." }
+        require(BookingRules.isWithinCheckInWindow(booking, clock())) {
+            "Chỉ nhận sân cho phiếu đã cọc trong ngày, từ ${BookingRules.CHECK_IN_EARLY_MINUTES} phút trước giờ chơi đến khi hết giờ."
         }
-        require(catalog.find(it.courtId)?.available == true) { "Sân tạm ngưng hoạt động." }
-        it.copy(state = ReservationState.CHECKED_IN)
+        require(reservations.none { it.courtId == booking.courtId && it.state == ReservationState.CHECKED_IN }) {
+            "Sân vẫn đang thuê. Xác nhận trả sân trước khi nhận lượt tiếp theo."
+        }
+        require(catalog.find(booking.courtId)?.available == true) { "Sân tạm ngưng hoạt động." }
+        val checkedIn = booking.copy(state = ReservationState.CHECKED_IN)
+        write(reservations.map { if (it.id == id) checkedIn else it })
+        checkedIn
     }
 
     fun checkOut(id: String) = change(id) {

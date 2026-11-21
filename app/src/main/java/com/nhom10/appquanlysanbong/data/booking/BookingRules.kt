@@ -6,6 +6,7 @@ import java.util.Calendar
 
 object BookingRules {
     const val HOLD_MINUTES = 15
+    const val CHECK_IN_EARLY_MINUTES = 15
     const val DEPOSIT_PERCENT = 30
     const val REFUND_HOURS = 12L
 
@@ -25,6 +26,13 @@ object BookingRules {
         reservation.courtId == courtId && reservation.day == day &&
             reservation.start < end && start < reservation.end &&
             effectiveState(reservation, now).occupiesSlot
+
+    fun isWithinCheckInWindow(reservation: Reservation, now: Long): Boolean {
+        if (reservation.state != ReservationState.PAID || reservation.day != ScheduleDays.date(now = now)) return false
+        val start = ScheduleDays.startMillis(reservation.day, reservation.start)
+        val end = ScheduleDays.startMillis(reservation.day, reservation.end)
+        return now >= start - CHECK_IN_EARLY_MINUTES * 60_000L && now < end
+    }
 
     fun effectiveState(reservation: Reservation, now: Long): ReservationState =
         if (reservation.state == ReservationState.HELD && reservation.expiresAt <= now) {

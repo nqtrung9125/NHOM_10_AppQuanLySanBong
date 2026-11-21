@@ -3,6 +3,7 @@ package com.nhom10.appquanlysanbong.ui.reception
 import android.os.Bundle
 import android.view.View
 import com.nhom10.appquanlysanbong.data.booking.BookingRepository
+import com.nhom10.appquanlysanbong.data.booking.BookingRules
 import com.nhom10.appquanlysanbong.data.booking.DepositMethod
 import com.nhom10.appquanlysanbong.data.booking.ReservationState
 import com.nhom10.appquanlysanbong.data.booking.ScheduleDays
@@ -46,6 +47,8 @@ class ReceptionBookingsFragment : WorkspaceFragment() {
                 (searchByPhone && phones[it.ownerId]?.contains(digits) == true)
         }
         if (bookings.isEmpty()) emptyState("Chưa có phiếu phù hợp.")
+        val busyCourts = all.filter { it.state == ReservationState.CHECKED_IN }.map { it.courtId }.toSet()
+        val now = System.currentTimeMillis()
         bookings.forEach { booking ->
             card(booking.id) {
                 badge(booking.state.label)
@@ -70,10 +73,12 @@ class ReceptionBookingsFragment : WorkspaceFragment() {
                             }
                         }
                     }
-                    ReservationState.PAID -> if (booking.day == ScheduleDays.date() &&
-                        ScheduleDays.startMillis(booking.day, booking.end) > System.currentTimeMillis()
-                    ) {
-                        button("Nhận sân", primary = true) {
+                    ReservationState.PAID -> when {
+                        !BookingRules.isWithinCheckInWindow(booking, now) ->
+                            paragraph("Nhận sân từ ${BookingRules.CHECK_IN_EARLY_MINUTES} phút trước giờ chơi đến khi hết giờ.")
+                        booking.courtId in busyCourts ->
+                            paragraph("Sân vẫn đang thuê. Xác nhận trả sân trước khi nhận lượt này.")
+                        else -> button("Nhận sân", primary = true) {
                             perform("Đã xác nhận nhận sân.") { repository.checkIn(booking.id) }
                         }
                     }
