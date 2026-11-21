@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:orientation="vertical"
+    android:tag="kh_light_status">
+
+    <include android:id="@+id/appbar" layout="@layout/view_kh_compact_appbar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:paddingStart="@dimen/screen_padding" android:paddingEnd="@dimen/screen_padding"
+        android:paddingTop="16dp"
+        android:paddingBottom="8dp"
+        android:scrollbars="none">
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical">
+
+            <ImageView android:layout_width="match_parent" android:layout_height="118dp" android:scaleType="centerInside" android:importantForAccessibility="no" android:src="@drawable/ic_kh_football_plan" />
+
+            <TextView android:layout_marginTop="12dp" android:id="@+id/tv_subtitle" style="@style/KhCompactHeading" android:text="Sân phù hợp đội 5 người" />
+
+            <LinearLayout android:layout_marginTop="12dp" style="@style/KhNoteInfo">
+                <TextView style="@style/KhNoteInfoTitle" android:text="Tiện ích" />
+                <TextView android:id="@+id/tv_amenities" style="@style/KhNoteInfoBody" />
+            </LinearLayout>
+
+            <LinearLayout android:layout_marginTop="12dp" style="@style/KhCompactCard">
+                <TextView android:id="@+id/tv_pricing_title" style="@style/KhCardTitle" android:text="Bảng giá sân 5 người" />
+                <TextView style="@style/KhCardStatus" android:text="Giá theo giờ" />
+                <LinearLayout
+                    android:id="@+id/ll_price_rows"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" />
+            </LinearLayout>
+
+            <LinearLayout android:layout_marginTop="12dp" style="@style/KhNoteInfo">
+                <TextView style="@style/KhNoteInfoTitle" android:text="Đặt cọc 30%" />
+                <TextView style="@style/KhNoteInfoBody" android:text="Thanh toán trong 15 phút. Hủy trước ít nhất 12 giờ có thể yêu cầu hoàn cọc." />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="@dimen/screen_padding" android:paddingEnd="@dimen/screen_padding"
+        android:paddingTop="16dp"
+        android:paddingBottom="24dp">
+        <TextView android:id="@+id/btn_pick_time" style="@style/KhCompactPrimary" android:text="Chọn giờ đặt sân" />
+    </FrameLayout>
+
+    <include android:id="@+id/bottomNav" layout="@layout/view_bottom_nav" />
+</LinearLayout>
