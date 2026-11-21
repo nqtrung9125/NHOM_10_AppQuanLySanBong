@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:orientation="vertical"
+    android:tag="kh_light_status">
+
+    <include android:id="@+id/appbar" layout="@layout/view_kh_compact_appbar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:paddingStart="@dimen/screen_padding" android:paddingEnd="@dimen/screen_padding"
+        android:paddingTop="16dp"
+        android:paddingBottom="8dp"
+        android:scrollbars="none">
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical">
+
+            <LinearLayout style="@style/KhCompactFilters">
+                <TextView android:id="@+id/tab_football" style="@style/KhCompactFilter" android:text="Bóng đá" android:backgroundTint="@color/brand" android:textColor="@color/surface" />
+                <TextView android:id="@+id/tab_badminton" style="@style/KhCompactFilter" android:text="Cầu lông" android:layout_marginStart="8dp" />
+                <TextView android:id="@+id/tab_pickleball" style="@style/KhCompactFilter" android:text="Pickleball" android:layout_marginStart="8dp" />
+            </LinearLayout>
+
+            <LinearLayout android:layout_marginTop="12dp" style="@style/KhCompactField">
+                <TextView style="@style/KhCompactFieldLabel" android:text="Hình thức / Quy mô" />
+                <TextView style="@style/KhCompactFieldValue" android:text="Tìm đội đối · Bóng đá 5 người" />
+            </LinearLayout>
+
+            <LinearLayout android:layout_marginTop="12dp" style="@style/KhCompactField">
+                <TextView style="@style/KhCompactFieldLabel" android:text="Thời gian mong muốn" />
+                <TextView style="@style/KhCompactFieldValue" android:text="20/11/2026 · 18:00 – 19:00" />
+            </LinearLayout>
+
+            <LinearLayout android:layout_marginTop="12dp" style="@style/KhCompactField">
+                <TextView style="@style/KhCompactFieldLabel" android:text="Trình độ / Đội của bạn" />
+                <TextView style="@style/KhCompactFieldValue" android:text="Trung bình · Đội Minh Anh · Đủ 5 người" />
+            </LinearLayout>
+
+            <LinearLayout android:layout_marginTop="12dp" style="@style/KhCompactField">
+                <TextView style="@style/KhCompactFieldLabel" android:text="Ngân sách mỗi đội" />
+                <TextView style="@style/KhCompactFieldValue" android:text="Tối đa 250.000đ · Chia đều tiền sân" />
+            </LinearLayout>
+
+            <LinearLayout android:layout_marginTop="12dp" style="@style/KhNoteInfo">
+                <TextView style="@style/KhNoteInfoTitle" android:text="Chỉ chốt khi hai bên đồng ý" />
+                <TextView style="@style/KhNoteInfoBody" android:text="Nhân viên đề xuất đối và sân phù hợp. Chưa thu tiền khi bạn gửi yêu cầu." />
+            </LinearLayout>
+
+            <TextView android:layout_marginTop="12dp" android:id="@+id/btn_view_sent_proposals" style="@style/KhCompactSecondary" android:text="Xem đề xuất nhân viên đã gửi" />
+        </LinearLayout>
+    </ScrollView>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="@dimen/screen_padding" android:paddingEnd="@dimen/screen_padding"
+        android:paddingTop="16dp"
+        android:paddingBottom="24dp">
+        <TextView android:id="@+id/btn_send_request" style="@style/KhCompactPrimary" android:text="Gửi yêu cầu tìm đối" />
+    </FrameLayout>
+
+    <include android:id="@+id/bottomNav" layout="@layout/view_bottom_nav" />
+</LinearLayout>
