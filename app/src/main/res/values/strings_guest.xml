@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="guest_banner_title">Bạn đang xem với tư cách khách</string>
+    <string name="guest_banner_message">Xem sân, bảng giá và lịch trống. Đăng nhập để đặt sân.</string>
+    <string name="guest_football_title">Bóng đá 5/7/11 người</string>
+    <string name="guest_football_schedule">Xem lịch và giá sân</string>
+    <string name="guest_football_detail">Cỏ nhân tạo · Có đèn</string>
+    <string name="guest_login_to_book">Đăng nhập để đặt sân</string>
+    <string name="guest_demo_accounts">Chọn tài khoản demo</string>
+    <string name="guest_search_hint">Tên hoặc mã sân</string>
+    <string name="guest_empty">Không tìm thấy sân.</string>
+</resources>
