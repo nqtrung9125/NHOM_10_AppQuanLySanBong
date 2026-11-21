@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:orientation="vertical"
+    android:tag="kh_light_status">
+
+    <include android:id="@+id/appbar" layout="@layout/view_kh_compact_appbar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:paddingStart="@dimen/screen_padding" android:paddingEnd="@dimen/screen_padding"
+        android:paddingTop="16dp"
+        android:paddingBottom="8dp"
+        android:scrollbars="none">
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical">
+
+            <LinearLayout style="@style/KhNoteInfo">
+                <TextView style="@style/KhNoteInfoTitle" android:text="Hai đội đã đồng ý đề xuất" />
+                <TextView style="@style/KhNoteInfoBody" android:text="Sân D1 được giữ đến 10:15 · Còn 08:42" />
+            </LinearLayout>
+
+            <LinearLayout android:layout_marginTop="12dp" style="@style/KhCompactCard">
+                <TextView style="@style/KhCardTitle" android:text="Minh Anh × Hoàng Nam" />
+                <TextView style="@style/KhCardStatus" android:text="Bóng đá 5 · 20/11 · 18:00 – 19:00" />
+                <TextView style="@style/KhCardMeta" android:text="Phần đội Minh Anh: 250.000đ" />
+                <TextView style="@style/KhCardDetail" android:text="Cọc cần thanh toán: 75.000đ" />
+            </LinearLayout>
+
+            <LinearLayout android:layout_marginTop="12dp" style="@style/KhCompactField">
+                <TextView style="@style/KhCompactFieldLabel" android:text="Phương thức thanh toán" />
+                <TextView style="@style/KhCompactFieldValue" android:text="Ví điện tử · Đang chọn" />
+            </LinearLayout>
+
+            <LinearLayout android:layout_marginTop="12dp" style="@style/KhNoteWarning">
+                <TextView style="@style/KhNoteWarningTitle" android:text="Chỉ thanh toán phần đội bạn" />
+                <TextView style="@style/KhNoteWarningBody" android:text="Tổng cọc hai đội là 150.000đ. Trận chỉ được xác nhận sau khi cả hai phần cọc thành công." />
+            </LinearLayout>
+
+            <LinearLayout android:layout_marginTop="12dp" style="@style/KhNoteInfo">
+                <TextView style="@style/KhNoteInfoTitle" android:text="Nếu đội kia không thanh toán kịp" />
+                <TextView style="@style/KhNoteInfoBody" android:text="Lịch tự hủy; phần cọc đã trả được hoàn về phương thức ban đầu trong 1–3 ngày." />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="@dimen/screen_padding" android:paddingEnd="@dimen/screen_padding"
+        android:paddingTop="16dp"
+        android:paddingBottom="24dp">
+        <TextView android:id="@+id/btn_pay_team_deposit" style="@style/KhCompactPrimary" android:text="Thanh toán cọc đội bạn 75.000đ" />
+    </FrameLayout>
+
+    <include android:id="@+id/bottomNav" layout="@layout/view_bottom_nav" />
+</LinearLayout>

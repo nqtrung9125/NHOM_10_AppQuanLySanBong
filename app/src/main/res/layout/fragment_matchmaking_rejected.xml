@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:orientation="vertical"
+    android:tag="kh_light_status">
+
+    <include android:id="@+id/appbar" layout="@layout/view_kh_compact_appbar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:paddingStart="@dimen/screen_padding" android:paddingEnd="@dimen/screen_padding"
+        android:paddingTop="16dp"
+        android:paddingBottom="8dp"
+        android:scrollbars="none">
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical">
+
+            <LinearLayout style="@style/KhNoteSuccess">
+                <TextView style="@style/KhNoteSuccessTitle" android:text="Chưa chốt trận · Chưa thu tiền" />
+                <TextView style="@style/KhNoteSuccessBody" android:text="Nhân viên đã nhận phản hồi và sẽ tìm đối khác." />
+            </LinearLayout>
+
+            <LinearLayout android:layout_marginTop="12dp" style="@style/KhCompactCard">
+                <TextView style="@style/KhCardTitle" android:text="CK202611200003 · Đội Minh Anh" />
+                <TextView style="@style/KhCardStatus" android:text="Tiếp tục tìm đội đối" />
+                <TextView style="@style/KhCardMeta" android:text="20/11 · 18:00 – 19:00 · Trung bình" />
+                <TextView style="@style/KhCardDetail" android:text="Ngân sách 250.000đ/đội" />
+            </LinearLayout>
+
+            <LinearLayout android:layout_marginTop="12dp" style="@style/KhNoteInfo">
+                <TextView style="@style/KhNoteInfoTitle" android:text="Sân của đề xuất đã được mở lại" />
+                <TextView style="@style/KhNoteInfoBody" android:text="Không tự đặt sân hoặc thu cọc khi một bên từ chối." />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="@dimen/screen_padding" android:paddingEnd="@dimen/screen_padding"
+        android:paddingTop="16dp"
+        android:paddingBottom="24dp">
+        <TextView android:id="@+id/btn_my_requests" style="@style/KhCompactPrimary" android:text="Xem yêu cầu của tôi" />
+    </FrameLayout>
+
+    <include android:id="@+id/bottomNav" layout="@layout/view_bottom_nav" />
+</LinearLayout>
