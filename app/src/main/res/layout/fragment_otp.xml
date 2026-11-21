@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- KH-02 Xác thực OTP -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:orientation="vertical">
+
+    <!-- App bar -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/appbar_height"
+        android:background="@drawable/bg_appbar"
+        android:clipChildren="true"
+        android:clipToOutline="true">
+
+        <ImageView
+            android:layout_width="110dp"
+            android:layout_height="110dp"
+            android:layout_gravity="end|top"
+            android:layout_marginTop="-45dp"
+            android:layout_marginEnd="-40dp"
+            android:src="@drawable/ic_guest_deco_large" android:importantForAccessibility="no" />
+
+        <ImageView
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_gravity="end|bottom"
+            android:layout_marginEnd="79dp"
+            android:layout_marginBottom="-34dp"
+            android:src="@drawable/ic_guest_deco_small" android:importantForAccessibility="no" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingStart="8dp"
+            android:paddingEnd="@dimen/space_l">
+
+            <ImageView
+                android:id="@+id/btnBack"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="@string/cd_back"
+                android:padding="8dp"
+                android:src="@drawable/ic_guest_back" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_weight="1"
+                android:fontFamily="sans-serif-medium"
+                android:text="@string/otp_appbar"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/text_appbar" />
+        </LinearLayout>
+    </FrameLayout>
+
+    <!-- Content -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:paddingStart="@dimen/screen_padding"
+        android:paddingTop="40dp"
+        android:paddingEnd="@dimen/screen_padding"
+        android:paddingBottom="@dimen/screen_padding">
+
+        <FrameLayout
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:background="@drawable/bg_icon_circle">
+
+            <ImageView
+                android:layout_width="34dp"
+                android:layout_height="34dp"
+                android:layout_gravity="center"
+                android:importantForAccessibility="no"
+                android:src="@drawable/ic_kh_otp_lock" />
+        </FrameLayout>
+
+        <TextView
+            style="@style/Text.Title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:text="@string/otp_title" />
+
+        <TextView
+            android:id="@+id/tvOtpSubtitle"
+            style="@style/Text.Body.Muted"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:gravity="center" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/otp1"
+                style="@style/OtpDigit" />
+
+            <EditText
+                android:id="@+id/otp2"
+                style="@style/OtpDigit"
+                android:layout_marginStart="@dimen/otp_gap" />
+
+            <EditText
+                android:id="@+id/otp3"
+                style="@style/OtpDigit"
+                android:layout_marginStart="@dimen/otp_gap" />
+
+            <EditText
+                android:id="@+id/otp4"
+                style="@style/OtpDigit"
+                android:layout_marginStart="@dimen/otp_gap" />
+
+            <EditText
+                android:id="@+id/otp5"
+                style="@style/OtpDigit"
+                android:layout_marginStart="@dimen/otp_gap" />
+
+            <EditText
+                android:id="@+id/otp6"
+                style="@style/OtpDigit"
+                android:layout_marginStart="@dimen/otp_gap" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvResend"
+            style="@style/Text.Body.Muted"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:padding="4dp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnConfirm"
+            style="@style/ButtonPrimary"
+            android:layout_marginTop="20dp"
+            android:text="@string/otp_confirm" />
+    </LinearLayout>
+</LinearLayout>

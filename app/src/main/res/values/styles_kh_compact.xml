@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="kh_compact_warning">#FFF3C4</color>
+    <color name="kh_compact_warning_ink">#A84700</color>
+    <color name="kh_compact_success">#E4F6ED</color>
+    <color name="kh_compact_success_ink">#0C6447</color>
+
+    <style name="KhCompactCard">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:background">@drawable/bg_kh_compact_card</item>
+        <item name="android:padding">16dp</item>
+    </style>
+
+    <style name="KhCardTitle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="KhCardStatus">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:layout_marginTop">12dp</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/brand</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="KhCardMeta">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:textColor">@color/text_muted</item>
+    </style>
+
+    <style name="KhCardDetail">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:layout_marginTop">12dp</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/text_primary</item>
+    </style>
+
+    <style name="KhCompactHeading" parent="KhCardTitle">
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="KhCompactAmount" parent="KhCompactHeading">
+        <item name="android:textColor">@color/brand</item>
+    </style>
+
+    <style name="KhCompactCode" parent="KhCompactHeading">
+        <item name="android:textSize">22sp</item>
+        <item name="android:textColor">@color/brand_dark</item>
+    </style>
+
+    <style name="KhNoteInfo">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:paddingStart">16dp</item>
+        <item name="android:paddingEnd">16dp</item>
+        <item name="android:paddingTop">14dp</item>
+        <item name="android:paddingBottom">14dp</item>
+        <item name="android:background">@drawable/bg_lt_notice_lavender</item>
+    </style>
+
+    <style name="KhNoteWarning" parent="KhNoteInfo">
+        <item name="android:background">@drawable/bg_kh_compact_warning</item>
+    </style>
+
+    <style name="KhNoteSuccess" parent="KhNoteInfo">
+        <item name="android:background">@drawable/bg_kh_compact_success</item>
+    </style>
+
+    <style name="KhNoteInfoTitle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/brand</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="KhNoteInfoBody">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:layout_marginTop">8dp</item>
+        <item name="android:lineSpacingExtra">2dp</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:textColor">@color/brand</item>
+    </style>
+
+    <style name="KhNoteWarningTitle" parent="KhNoteInfoTitle">
+        <item name="android:textColor">@color/kh_compact_warning_ink</item>
+    </style>
+
+    <style name="KhNoteWarningBody" parent="KhNoteInfoBody">
+        <item name="android:textColor">@color/kh_compact_warning_ink</item>
+    </style>
+
+    <style name="KhNoteSuccessTitle" parent="KhNoteInfoTitle">
+        <item name="android:textColor">@color/kh_compact_success_ink</item>
+    </style>
+
+    <style name="KhNoteSuccessBody" parent="KhNoteInfoBody">
+        <item name="android:textColor">@color/kh_compact_success_ink</item>
+    </style>
+
+    <style name="KhCompactPrimary">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">48dp</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:background">@drawable/bg_qt_primary_flat</item>
+        <item name="android:gravity">center</item>
+        <item name="android:paddingStart">8dp</item>
+        <item name="android:paddingEnd">8dp</item>
+        <item name="android:textColor">@color/surface</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+    </style>
+
+    <style name="KhCompactSecondary" parent="KhCompactPrimary">
+        <item name="android:layout_height">44dp</item>
+        <item name="android:textColor">@color/brand</item>
+        <item name="android:background">@drawable/bg_lt_outline</item>
+        <item name="android:foreground">?attr/selectableItemBackground</item>
+    </style>
+
+    <style name="KhCompactField">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="KhCompactFieldLabel">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:textColor">@color/text_muted</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="KhCompactFieldValue">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:minHeight">46dp</item>
+        <item name="android:layout_marginTop">8dp</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:paddingStart">12dp</item>
+        <item name="android:paddingEnd">12dp</item>
+        <item name="android:paddingTop">10dp</item>
+        <item name="android:paddingBottom">10dp</item>
+        <item name="android:background">@drawable/bg_filter</item>
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="KhCompactFilters">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <style name="KhCompactFilter">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">36dp</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:background">@drawable/bg_filter</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+    </style>
+</resources>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/appbar_height"
+    android:background="@drawable/bg_appbar"
+    android:clipChildren="true"
+    android:clipToOutline="true">
+
+    <ImageView
+        android:id="@+id/appbarDecorLarge"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        android:layout_gravity="end|top"
+        android:layout_marginTop="-45dp"
+        android:layout_marginEnd="-40dp"
+        android:src="@drawable/ic_guest_deco_large"
+        android:importantForAccessibility="no" />
+
+    <ImageView
+        android:id="@+id/appbarDecorSmall"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_gravity="end|top"
+        android:layout_marginEnd="79dp"
+        android:layout_marginTop="34dp"
+        android:src="@drawable/ic_guest_deco_small"
+        android:importantForAccessibility="no" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="8dp"
+        android:paddingEnd="@dimen/space_l">
+
+        <ImageView
+            android:id="@+id/btnBack"
+            android:layout_width="40dp"
+            android:layout_height="48dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="@string/cd_back"
+            android:scaleType="center"
+            android:src="@drawable/ic_guest_back" />
+
+        <TextView
+            android:id="@+id/tvAppbarTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_weight="1"
+            android:ellipsize="end"
+            android:includeFontPadding="false"
+            android:maxLines="1"
+            android:fontFamily="sans-serif-medium"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/text_appbar" />
+    </LinearLayout>
+</FrameLayout>

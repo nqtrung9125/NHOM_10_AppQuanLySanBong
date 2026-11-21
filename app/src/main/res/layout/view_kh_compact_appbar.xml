@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/appbar_height"
+    android:background="@drawable/bg_qt_secondary_header"
+    android:gravity="center_vertical"
+    android:paddingStart="12dp"
+    android:paddingEnd="@dimen/space_l">
+
+    <ImageButton
+        android:id="@+id/btnBack"
+        android:layout_width="40dp"
+        android:layout_height="48dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="@string/cd_back"
+        android:scaleType="center"
+        android:src="@drawable/ic_lt_back_plain" />
+
+    <TextView
+        android:id="@+id/tvAppbarTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/space_s"
+        android:layout_weight="1"
+        android:accessibilityHeading="true"
+        android:ellipsize="end"
+        android:includeFontPadding="false"
+        android:maxLines="1"
+        android:textColor="@color/surface"
+        android:textSize="@dimen/text_appbar"
+        android:textStyle="bold" />
+</LinearLayout>

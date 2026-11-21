@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="12dp"
+    android:background="@drawable/bg_kh_compact_card"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/tv_court_name"
+        style="@style/KhCardTitle"
+        android:text="Sân D1 · Bóng đá 5 người" />
+
+    <TextView
+        android:id="@+id/tv_court_status"
+        style="@style/KhCardStatus"
+        android:text="Còn trống · Có đèn" />
+
+    <TextView
+        android:id="@+id/tv_court_sub"
+        style="@style/KhCardMeta"
+        android:text="20/11/2026 · 18:00 – 19:00" />
+
+    <TextView
+        android:id="@+id/tv_court_price"
+        style="@style/KhCardDetail"
+        android:text="500.000đ/giờ · Cỏ nhân tạo" />
+</LinearLayout>
