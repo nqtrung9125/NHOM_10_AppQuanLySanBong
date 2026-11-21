@@ -1,5 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+    <color name="brand">#5B3DEB</color>
+    <color name="brand_light">#7059F4</color>
+    <color name="brand_dark">#281969</color>
+    <color name="brand_mid">#422BAA</color>
+    <color name="brand_tint">#EEE9FF</color>
+    <color name="brand_soft_text">#CABCFF</color>
+    <color name="lime">#C8FF72</color>
+    <color name="background">#F8F7FF</color>
+    <color name="surface">#FFFFFF</color>
+    <color name="text_primary">#0F172A</color>
+    <color name="text_muted">#64748B</color>
+    <color name="text_hint">#94A3B8</color>
+    <color name="border">#DCE3EE</color>
+    <color name="border_input">#CBD5E1</color>
+    <color name="border_card">#E2E8F0</color>
+    <color name="warning_bg">#FEF3C7</color>
+    <color name="warning_text">#B45309</color>
+    <color name="white_alpha_08">#14FFFFFF</color>
+    <color name="white_alpha_18">#2EFFFFFF</color>
+    <color name="white_alpha_94">#F0FFFFFF</color>
+    <color name="danger">#DC2626</color>
+    <color name="danger_bg">#FEE2E2</color>
+    <color name="success">#15803D</color>
+    <color name="success_bg">#DCFCE7</color>
+    <color name="brand_chip">#4C32C9</color>
 </resources>
