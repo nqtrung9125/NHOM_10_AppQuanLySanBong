@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:orientation="vertical"
+    android:tag="kh_light_status">
+
+    <include android:id="@+id/appbar" layout="@layout/view_kh_compact_appbar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:paddingStart="@dimen/screen_padding" android:paddingEnd="@dimen/screen_padding"
+        android:paddingTop="16dp"
+        android:paddingBottom="8dp"
+        android:scrollbars="none">
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical">
+
+            <LinearLayout style="@style/KhNoteWarning">
+                <TextView style="@style/KhNoteWarningTitle" android:text="Đã nhận cọc đội bạn: 75.000đ" />
+                <TextView style="@style/KhNoteWarningBody" android:text="Trận chưa được xác nhận. Đang chờ cọc đội Hoàng Nam." />
+            </LinearLayout>
+
+            <LinearLayout android:layout_marginTop="12dp" style="@style/KhCompactCard">
+                <TextView style="@style/KhCardTitle" android:text="CK202611200003 · Sân D1" />
+                <TextView style="@style/KhCardStatus" android:text="Đội Minh Anh: Đã cọc 75.000đ" />
+                <TextView style="@style/KhCardMeta" android:text="Đội Hoàng Nam: Chưa thanh toán" />
+                <TextView style="@style/KhCardDetail" android:text="Hết hạn 10:15 · Còn 07:32" />
+            </LinearLayout>
+
+            <LinearLayout android:layout_marginTop="12dp" style="@style/KhNoteInfo">
+                <TextView style="@style/KhNoteInfoTitle" android:text="Bạn không cần trả thêm" />
+                <TextView style="@style/KhNoteInfoBody" android:text="Hệ thống gửi thông báo khi đội đối thanh toán. Không thu lại khoản cọc đã nhận." />
+            </LinearLayout>
+
+            <LinearLayout android:layout_marginTop="12dp" style="@style/KhNoteInfo">
+                <TextView style="@style/KhNoteInfoTitle" android:text="Khi quá thời hạn" />
+                <TextView style="@style/KhNoteInfoBody" android:text="Tự hủy giữ sân và hoàn phần cọc đã thu trong 1–3 ngày." />
+            </LinearLayout>
+
+            <TextView android:layout_marginTop="12dp" android:id="@+id/btn_my_requests" style="@style/KhCompactSecondary" android:text="Xem yêu cầu của tôi" />
+        </LinearLayout>
+    </ScrollView>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="@dimen/screen_padding" android:paddingEnd="@dimen/screen_padding"
+        android:paddingTop="16dp"
+        android:paddingBottom="24dp">
+        <TextView android:id="@+id/btn_check_status" style="@style/KhCompactPrimary" android:text="Xem trạng thái cập nhật" />
+    </FrameLayout>
+
+    <include android:id="@+id/bottomNav" layout="@layout/view_bottom_nav" />
+</LinearLayout>

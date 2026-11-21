@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:orientation="vertical"
+    android:tag="kh_light_status">
+
+    <include android:id="@+id/appbar" layout="@layout/view_kh_compact_appbar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:paddingStart="@dimen/screen_padding" android:paddingEnd="@dimen/screen_padding"
+        android:paddingTop="12dp"
+        android:paddingBottom="8dp"
+        android:scrollbars="none">
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical">
+
+            <LinearLayout style="@style/KhNoteSuccess">
+                <TextView android:id="@+id/tv_success_deposit" style="@style/KhNoteSuccessTitle" android:text="Đã thanh toán cọc 150.000đ" />
+                <TextView android:id="@+id/tv_success_message" style="@style/KhNoteSuccessBody" android:text="Sân D1 đã được đặt cho bạn." />
+            </LinearLayout>
+
+            <TextView android:layout_marginTop="8dp" android:id="@+id/tv_success_code" style="@style/KhCompactCode" android:text="DS2026112000042" />
+
+            <LinearLayout android:layout_marginTop="8dp" style="@style/KhCompactCard">
+                <TextView android:id="@+id/tv_success_court" style="@style/KhCardTitle" android:text="Sân D1 · Bóng đá 5 người" />
+                <TextView style="@style/KhCardStatus" android:text="Đã xác nhận" />
+                <TextView android:id="@+id/tv_success_date_time" style="@style/KhCardMeta" android:text="20/11/2026 · 18:00 – 19:00" />
+                <TextView android:id="@+id/tv_success_player" style="@style/KhCardDetail" android:text="Nguyễn Minh Anh · 0901 234 567" />
+            </LinearLayout>
+
+            <LinearLayout android:layout_marginTop="8dp" style="@style/KhCompactCard">
+                <TextView android:id="@+id/tv_success_total" style="@style/KhCardTitle" android:text="Tổng tiền sân: 500.000đ" />
+                <TextView android:id="@+id/tv_success_paid" style="@style/KhCardStatus" android:text="Đã cọc: 150.000đ" />
+                <TextView android:id="@+id/tv_success_remaining" style="@style/KhCardMeta" android:text="Còn thanh toán tại sân: 350.000đ" />
+                <TextView style="@style/KhCardDetail" android:text="Xuất trình mã đặt sân khi làm thủ tục." />
+            </LinearLayout>
+
+            <LinearLayout android:layout_marginTop="8dp" style="@style/KhNoteInfo">
+                <TextView style="@style/KhNoteInfoTitle" android:text="Đến sân đúng giờ" />
+                <TextView style="@style/KhNoteInfoBody" android:text="Quá 15 phút sau giờ bắt đầu, lịch bị hủy và mất cọc." />
+            </LinearLayout>
+
+            <TextView android:layout_marginTop="8dp" android:id="@+id/btn_view_passes" style="@style/KhCompactSecondary" android:text="Xem sân đang được pass" />
+        </LinearLayout>
+    </ScrollView>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="@dimen/screen_padding" android:paddingEnd="@dimen/screen_padding"
+        android:paddingTop="16dp"
+        android:paddingBottom="24dp">
+        <TextView android:id="@+id/btn_home" style="@style/KhCompactPrimary" android:text="Về trang chủ" />
+    </FrameLayout>
+
+    <include android:id="@+id/bottomNav" layout="@layout/view_bottom_nav" />
+</LinearLayout>

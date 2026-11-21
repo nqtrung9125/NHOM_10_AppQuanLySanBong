@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:orientation="vertical"
+    android:tag="kh_light_status">
+
+    <include
+        android:id="@+id/appbar"
+        layout="@layout/view_kh_compact_appbar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:paddingStart="@dimen/screen_padding" android:paddingEnd="@dimen/screen_padding"
+        android:paddingTop="@dimen/space_l" android:paddingBottom="@dimen/space_l"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout style="@style/KhCompactFilters">
+                <TextView android:id="@+id/chip_all" style="@style/KhCompactFilter" android:text="Tất cả" />
+                <TextView android:id="@+id/chip_5" style="@style/KhCompactFilter" android:layout_marginStart="8dp" android:text="Sân 5" />
+                <TextView android:id="@+id/chip_7" style="@style/KhCompactFilter" android:layout_marginStart="8dp" android:text="Sân 7" />
+                <TextView android:id="@+id/chip_11" style="@style/KhCompactFilter" android:layout_marginStart="8dp" android:text="Sân 11" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_football_courts"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:orientation="vertical" />
+
+            <LinearLayout style="@style/KhNoteInfo">
+                <TextView style="@style/KhNoteInfoTitle" android:text="Chọn môn tại trang chủ" />
+                <TextView style="@style/KhNoteInfoBody" android:text="Cầu lông, pickleball và bóng chuyền vẫn có trong bộ lọc môn thể thao." />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <include
+        android:id="@+id/bottomNav"
+        layout="@layout/view_bottom_nav" />
+</LinearLayout>
