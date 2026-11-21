@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/background">
+
+    <include
+        android:id="@+id/appbar"
+        layout="@layout/view_appbar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="24dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp"
+                android:background="@drawable/bg_card">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:id="@+id/tvCancelCourt"
+                        style="@style/Text.Title"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:text="Sân A1 · Cầu lông" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Đã thanh toán cọc"
+                        android:textSize="11sp"
+                        android:textColor="@color/brand"
+                        android:background="@drawable/bg_pill"
+                        android:paddingHorizontal="10dp"
+                        android:paddingVertical="5dp" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tvCancelDateTime"
+                    style="@style/Text.Body.Muted"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Thứ Năm, 15/10/2026 · 17:00 – 19:00" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:text="Mã booking"
+                        android:textColor="@color/text_muted"
+                        android:textSize="13sp" />
+
+                    <TextView
+                        android:id="@+id/tvCancelCode"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="DS2026101500012"
+                        android:textColor="@color/text_primary"
+                        android:textStyle="bold"
+                        android:textSize="13sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:text="Đã thanh toán cọc (30%)"
+                        android:textColor="@color/text_muted"
+                        android:textSize="13sp" />
+
+                    <TextView
+                        android:id="@+id/tvRefundAmount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="150.000đ"
+                        android:textColor="@color/brand"
+                        android:textStyle="bold"
+                        android:textSize="14sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                style="@style/Text.Label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:text="Số tiền cọc được hoàn" />
+
+            <TextView
+                android:id="@+id/tvRefundReadonly"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:gravity="center_vertical"
+                android:paddingHorizontal="16dp"
+                android:layout_marginTop="6dp"
+                android:background="@drawable/bg_input"
+                android:text="150.000đ"
+                android:textColor="@color/text_primary"
+                android:textSize="15sp" />
+
+            <TextView
+                style="@style/Text.Label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Lý do hủy (không bắt buộc)" />
+
+            <EditText
+                android:id="@+id/edtCancelReason"
+                android:layout_width="match_parent"
+                android:layout_height="96dp"
+                android:gravity="top|start"
+                android:padding="14dp"
+                android:layout_marginTop="6dp"
+                android:background="@drawable/bg_input"
+                android:hint="Nhập lý do (ví dụ: đội thiếu người)"
+                android:textSize="14sp"
+                android:inputType="textMultiLine|textCapSentences" />
+
+            <TextView
+                android:id="@+id/tvRefundPolicy"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:padding="14dp" android:background="@drawable/bg_ql_notice_warning"
+                android:text="Hủy trước giờ chơi ít nhất 12 giờ được hoàn 100% tiền cọc, về phương thức thanh toán ban đầu trong 1–3 ngày."
+                android:textColor="@color/warning_text"
+                android:textSize="13sp" android:drawableStart="@drawable/ic_ql_warning" android:drawablePadding="10dp" />
+
+            <Button
+                android:id="@+id/btnConfirmCancel"
+                style="@style/ButtonPrimary"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="14dp"
+                android:text="Xác nhận hủy &amp; hoàn cọc" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
